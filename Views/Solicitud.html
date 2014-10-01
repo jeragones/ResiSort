@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="../Styles/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../Styles/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="../Styles/style.css" />
+    <script type="text/javascript" src="../JavaScripts/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="../Styles/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../JavaScripts/script.js"></script>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="page-header">
+        <h1>SOLICITUD DE RESIDENCIA PARA ESTUDIANTES REGULARES</h1>
+    </div>
+
+    <div class="row">
+        <div class="row step">
+            <div id="div1" class="col-md-2" onclick="javascript: resetActive(event, 0, 'step-1');">
+                <span class="fa fa-gamepad"></span>
+                <p>Download Application</p>
+            </div>
+            <div class="col-md-2 activestep" onclick="javascript: resetActive(event, 20, 'step-2');">
+                <span class="fa fa-pencil"></span>
+                <p>Fill out</p>
+            </div>
+            <div class="col-md-2" onclick="javascript: resetActive(event, 40, 'step-3');">
+                <span class="fa fa-refresh"></span>
+                <p>Check</p>
+            </div>
+            <div class="col-md-2" onclick="javascript: resetActive(event, 60, 'step-4');">
+                <span class="fa fa-dollar"></span>
+                <p>Pay Fee</p>
+            </div>
+            <div class="col-md-2" onclick="javascript: resetActive(event, 80, 'step-5');">
+                <span class="fa fa-cloud-upload"></span>
+                <p>Submit Application</p>
+            </div>
+            <div id="last" class="col-md-2" onclick="javascript: resetActive(event, 100, 'step-6');">
+                <span class="fa fa-star"></span>
+                <p>Send Feedback</p>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Steps Progress and Details - START -->
+    <div class="container" style="margin-top: 100px; margin-bottom: 100px;">
+
+        <div class="row">
+            <div class="progress" id="progress1">
+                <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
+                </div>
+                <span class="progress-type">Progreso General</span>
+                <span class="progress-completed">0%</span>
+            </div>
+        </div>
+
+        <form role="form">
+            <div class="row setup-content step hiddenStepInfo" id="step-1">
+                <div class="col-xs-5 well text-left">
+                    <h3>Información General</h3>
+                    <div class="form-group">
+                        <label for="cmbCampus" class="text-left">Sede</label>
+                        <select class="form-control" id="cmbCampus">
+                            <option>San Carlos</option>
+                            <option>Cartago</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="cmbYear">Año</label>
+                        <select class="form-control" id="cmbYear">
+                            <option>2014</option>
+                            <option>2015</option>
+                            <option>2016</option>
+                            <option>2017</option>
+                            <option>2018</option>
+                            <option>2019</option>
+                            <option>2020</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="cmbSemester">Periodo</label>
+                        <select class="form-control" id="cmbSemester">
+                            <option>Primer Semestre</option>
+                            <option>Segundo Semestre</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-13 text-right">
+                            <input type="button" value="Siguiente" class="btn btn-primary" onclick="javascript: resetActive(event, 20, 'step-2');"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row setup-content step activeStepInfo" id="step-2">
+                <div class="col-xs-5 well text-left">
+                    <h3>Información Personal</h3>
+                    <div class="form-group">
+                        <label for="txtNombre">Nombre</label>
+                        <input class="form-control" id="txtNombre" placeholder="Escriba su nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="txtLastName1">Primer Apellido</label>
+                        <input class="form-control" id="txtLastName1" placeholder="Escriba su primer apellido" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="txtLastName2">Segundo Apellido</label>
+                        <input class="form-control" id="txtLastName2" placeholder="Escriba su segundo apellido" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="txtCarnet">No. Carné</label>
+                        <input class="form-control" id="txtCarnet" placeholder="Escriba su carné" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="cmbCareer">Carrera</label>
+                        <select class="form-control" id="cmbCareer">
+                            <option>Computación</option>
+                            <option>Agronomía</option>
+                            <option>Producción Industrial</option>
+                            <option>Electrónica</option>
+                            <option>Turísmo</option>
+                            <option>Administración</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="txtTelefono1">Tel Casa</label>
+                        <input type="tel" class="form-control" id="txtTelefono1" placeholder="Telefono" required>
+                        <label for="txtTelefono2">Tel Celular</label>
+                        <input type="tel" class="form-control" id="txtTelefono2" placeholder="Telefono" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="txtEmail">Correo Electrónico</label>
+                        <input type="email" class="form-control" id="txtEmail" placeholder="Escriba su correo electrónico" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="txtAñoNac">Año de Nacimiento</label>
+                        <input type="date" class="form-control" id="txtAñoNac" required>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-13 text-right">
+                            <input type="button" value="Siguiente" class="btn btn-primary" onclick="javascript: resetActive(event, 40, 'step-3');"/>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="row setup-content step hiddenStepInfo" id="step-3">
+                <div class="col-xs-5 well text-left">
+                    <h3>Direccion de Procedencia</h3>
+                    <div class="form-group">
+                        <label for="txtProvincia">Provincia</label>
+                        <input class="form-control" id="txtprovincia" placeholder="Provincia de Procedencia" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="txtCanton">Cantón</label>
+                        <input class="form-control" id="txtcanton" placeholder="Cantón de Procedencia" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="txtDistrito">Distrito</label>
+                        <input class="form-control" id="txtdistrito" placeholder="Distrito de Procedencia" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="txtSeñas">Otras Señas</label>
+                        <textarea rows="4" cols="50"  class="form-control" id="txtseñas" placeholder="Otras Señas" required> </textarea>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-13 text-right">
+                            <input type="button" value="Siguiente" class="btn btn-primary" onclick="javascript: resetActive(event, 60, 'step-4');"/>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="row setup-content step hiddenStepInfo" id="step-4">
+                <div class="col-xs-5 well text-left">
+                    <h3>Información Económica</h3>
+                    <p>Indique la forma en la que cubrira sus gastos de estudio. Puede seleccionar mas de una opción</p>
+                    <div class="form-group">
+                        <p>
+                        <input type="checkbox" >
+                        Solicitud de Beca Socioeconómica del TEC en Tramite
+                        </p>
+                    </div>
+                    <div class="form-group">
+                        <p for="txtMMC">
+                            <input type="checkbox" >
+                            Beca Total Mauricio Campos.
+                        </p>
+                        <input type="text" class="form-control" id="txtMMC" placeholder="Monto mensual">
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="row setup-content step hiddenStepInfo" id="step-5">
+                <div class="col-xs-8">
+                    <div class="col-md-12 well">
+                        <h3>STEP 5</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="row setup-content step hiddenStepInfo" id="step-6">
+                <div class="col-xs-8">
+                    <div class="col-md-12 well">
+                        <h3>STEP 6</h3>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+
+
+    </div>
+
+
+
+    <!-- Steps Progress and Details - END -->
+
+</div>
+
+</body>
+</html>
