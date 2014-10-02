@@ -185,25 +185,73 @@
                 </div>
             </div>
             <div class="row setup-content step hiddenStepInfo" id="step-4">
-                <div class="col-xs-5 well text-left">
+            <div class="col-xs-5 well text-left">
                     <h3>Información Económica</h3>
                     <p>Indique la forma en la que cubrira sus gastos de estudio. Puede seleccionar mas de una opción</p>
                     <div class="form-group">
                         <p>
-                        <input type="checkbox" >
+                        <input type="radio" name="radioBeca">
                         Solicitud de Beca Socioeconómica del TEC en Tramite
                         </p>
                     </div>
                     <div class="form-group">
                         <p for="txtMMC">
-                            <input type="checkbox" >
+                            <input type="radio" name="radioBeca">
                             Beca Total Mauricio Campos.
                         </p>
                         <input type="text" class="form-control" id="txtMMC" placeholder="Monto mensual">
                     </div>
+                     <div class="form-group">
+                        <p for="txtBTCC">
+                            <input type="radio" name="radioBeca">
+                            Beca Total Colegio Científico.
+                        </p>
+                        <input type="text" class="form-control" id="txtBTCC" placeholder="Monto mensual">
+                    </div>
+                    <div class="form-group">
+                        <p for="txtBP">
+                            <input type="radio" name="radioBeca">
+                            Beca Prestamo.
+                        </p>
+                        <input type="text" class="form-control" id="txtBP" placeholder="Monto mensual">
+                    </div>
+                       
+                    <div class="form-group">
+                        <p >
+                            <input type="radio" name="radioBeca">
+                            Exoneración Porcentual.
+                        </p>
+                    </div>
+                     <div class="form-group">
+                            <p >
+                                <input type="radio" name="radioBeca">
+                                Beca de Estímulo
+                            </p>
+                            <label for="txttipo"> Tipo:</label>
+                            <input type="text" class="form-control" id="txttipo">
+                             <label for="txtUS"> Último semestre que la tuvo:</label>
+                            <input type="text" class="form-control" id="txtUS">
+                    </div>
+                    <div class="form-group">
+                        <p for="txtAP">
+                            <input type="radio" name="radioBeca">
+                            Apoyo familiar.
+                        </p>
+                        <input type="text" class="form-control" id="txtAP" placeholder="Monto mensual">
+                    </div>  
+                    <div class="form-group">
+                        <p for="txtOt">
+                            <input type="radio" name="radioBeca">
+                            Otra(s)
+                        </p>
+                         <label for="txtOt"> Especifíque:</label>
+                        <input type="text" class="form-control" id="txtOt">
+                    </div>  
 
 
-                </div>
+
+             </div>
+        </div>
             </div>
             <div class="row setup-content step hiddenStepInfo" id="step-5">
                 <div class="col-xs-8">
