@@ -1,7 +1,6 @@
 /**
  * Created by Daniel on 30/09/2014.
  */
-
 function resetActive(event, percent, step) {
     $(".progress-bar").css("width", percent + "%").attr("aria-valuenow", percent);
     $(".progress-completed").text(percent + "%");
@@ -36,10 +35,19 @@ function showCurrentStepInfo(step) {
     var id = "#" + step;
     $(id).addClass("activeStepInfo");
 }
-/*
+
 function showPartner(){
-    $("#opNo").click(function(){
+    
+   /* $("#opNo").click(function(){
         document.getElementById('explique').innerHTML = "<label> Explique:</label> ";
     }
-}
+    */
+
+    /*
+    $("#comboEx").on('click', function() {
+    $("#explique").show();
+    
+});
 */
+ document.getElementById('explique').style.visibility="visible";
+}

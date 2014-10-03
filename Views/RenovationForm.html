@@ -22,27 +22,27 @@
     <div class="row step">
         <div id="div1" class="col-md-2" onclick="javascript: resetActive(event, 0, 'step-1');">
             <span class="fa fa-cloud-download"></span>
-            <p>Download Application</p>
+            <p>Información general</p>
         </div>
         <div class="col-md-2 activestep" onclick="javascript: resetActive(event, 20, 'step-2');">
             <span class="fa fa-pencil"></span>
-            <p>Fill out</p>
+            <p>Procedencia</p>
         </div>
         <div class="col-md-2" onclick="javascript: resetActive(event, 40, 'step-3');">
             <span class="fa fa-refresh"></span>
-            <p>Check</p>
+            <p>Conformidad</p>
         </div>
         <div class="col-md-2" onclick="javascript: resetActive(event, 60, 'step-4');">
             <span class="fa fa-dollar"></span>
-            <p>Pay Fee</p>
+            <p>Info Económica</p>
         </div>
         <div class="col-md-2" onclick="javascript: resetActive(event, 80, 'step-5');">
-            <span class="fa fa-cloud-upload"></span>
-            <p>Submit Application</p>
+             <span class="fa fa-star"></span>
+            <p>Concesiones</p>
         </div>
         <div id="last" class="col-md-2" onclick="javascript: resetActive(event, 100, 'step-6');">
             <span class="fa fa-star"></span>
-            <p>Send Feedback</p>
+            <p>Concesiones</p>
         </div>
     </div>
 </div>
@@ -85,19 +85,13 @@
                     <label for="txtLastName2">Segundo Apellido</label>
                     <input class="form-control" id="txtLastName2" placeholder="Escriba su segundo apellido" required>
                 </div>
-                 <div class="form-group">
-                    <label for="txtNacimiento">Año de nacimiento</label>
-                    <input class="form-control" id="txtNacimiento" placeholder="Escriba su fecha de nacimiento" required>
-                </div>
+                
                 <div class="form-group">
                     <label for="txtCarnet">No. Carné</label>
                     <input class="form-control" id="txtCarnet" placeholder="Escriba su carné" required>
                 </div>
-                <div class="form-group">
-                    <label for="txtEmail">Correo Electrónico</label>
-                    <input type="email" class="form-control" id="txtEmail" placeholder="Escriba su correo electrónico" required>
-                </div>
-                <div class="form-group">
+
+                 <div class="form-group">
                     <label for="cmbCareer">Carrera</label>
                     <select class="form-control" id="cmbCareer">
                         <option>Computación</option>
@@ -108,6 +102,17 @@
                         <option>Administración</option>
                     </select>
                 </div>
+                <div class="form-group">
+                    <label for="txtEmail">Correo Electrónico</label>
+                    <input type="email" class="form-control" id="txtEmail" placeholder="Escriba su correo electrónico" required>
+                </div>
+
+                 <div class="form-group">
+                        <label for="txtAñoNac">Año de Nacimiento</label>
+                        <input type="date" class="form-control" id="txtAñoNac" required>
+                </div>
+                
+               
                 <div class="form-group">
                         <div class="col-md-13 text-right">
                             <input type="button" value="Siguiente" class="btn btn-primary" onclick="javascript: resetActive(event, 60, 'step-2');"/>
@@ -143,12 +148,12 @@
                         <label for="txtSeñas">Otras Señas</label>
                         <textarea rows="4" cols="50"  class="form-control" id="txtseñas" placeholder="Otras Señas" required> </textarea>
                 </div>
+
                 <div class="form-group">
                         <div class="col-md-13 text-right">
                             <input type="button" value="Siguiente" class="btn btn-primary" onclick="javascript: resetActive(event, 60, 'step-3');"/>
                         </div>
-                    </div>
-
+                 </div>
                 
             </div>
         </div>
@@ -165,13 +170,12 @@
                         </div>
                         <div class="form-group">
                             <p >
-                                <input id ="opNo" type="radio" name="radioCC">
+                                <input id = "comboEx" onclick="javascript: showPartner()" type="radio" name="radioCC">
                                 No
                             </p>
-                            <div  id="explique">
-                                <!--<label for="txtjust"> Explique:</label>
-                                <input type="text" class="form-control" id="txtjust">-->
-
+                            <div id="explique">
+                                <label for="txtjust" style="visibility: hidden"> Explique:</label >
+                                <input type="text" class="form-control" id="txtjust" style="visibility: hidden">
                             </div>
                         </div>
 
