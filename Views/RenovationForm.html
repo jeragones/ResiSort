@@ -198,65 +198,72 @@
                     <p>Indique la forma en la que cubrira sus gastos de estudio. Puede seleccionar mas de una opción</p>
                     <div class="form-group">
                         <p>
-                        <input type="radio" name="radioBeca">
+                        <input type="radio" name="radioBeca"  name="radioCC" onclick="javascript: hideAll()" >
                         Solicitud de Beca Socioeconómica del TEC en Tramite
                         </p>
                     </div>
                     <div class="form-group">
                         <p for="txtMMC">
-                            <input type="radio" name="radioBeca">
+                            <input type="radio" name="radioBeca" onclick="javascript: showBMC(true)">
                             Beca Total Mauricio Campos.
                         </p>
-                        <input type="text" class="form-control" id="txtMMC" placeholder="Monto mensual">
+                        <input  id="BMC" style="display: none" type="text" class="form-control" id="txtMMC" placeholder="Monto mensual">
                     </div>
                      <div class="form-group">
                         <p for="txtBTCC">
-                            <input type="radio" name="radioBeca">
+                            <input type="radio" name="radioBeca"   onclick="javascript:showBTCC(true) ">
                             Beca Total Colegio Científico.
                         </p>
-                        <input type="text" class="form-control" id="txtBTCC" placeholder="Monto mensual">
+                        <input id="BTCC" style="display: none" type="text" class="form-control" id="txtBTCC" placeholder="Monto mensual">
                     </div>
                     <div class="form-group">
                         <p for="txtBP">
-                            <input type="radio" name="radioBeca">
+                            <input type="radio" name="radioBeca" onclick="javascript:showBP(true) ">
                             Beca Prestamo.
                         </p>
-                        <input type="text" class="form-control" id="txtBP" placeholder="Monto mensual">
+                        <input  id="BP"style="display: none"  type="text" class="form-control" id="txtBP" placeholder="Monto mensual">
                     </div>
                        
                     <div class="form-group">
                         <p >
-                            <input type="radio" name="radioBeca">
+                            <input type="radio" name="radioBeca" onclick="javascript:hideAll() ">
                             Exoneración Porcentual.
                         </p>
                     </div>
                      <div class="form-group">
                             <p >
-                                <input type="radio" name="radioBeca">
+                                <input type="radio" name="radioBeca" onclick="javascript:showBE(true) ">
                                 Beca de Estímulo
                             </p>
-                            <label for="txttipo"> Tipo:</label>
-                            <input type="text" class="form-control" id="txttipo">
-                             <label for="txtUS"> Último semestre que la tuvo:</label>
-                            <input type="text" class="form-control" id="txtUS">
+                            <div id="BE" style="display: none">
+                                <label for="txttipo"> Tipo:</label>
+                                <input type="text" class="form-control" id="txttipo">
+                                 <label for="txtUS"> Último semestre que la tuvo:</label>
+                                <input type="text" class="form-control" id="txtUS">
+                            </div>
                     </div>
                     <div class="form-group">
                         <p for="txtAP">
-                            <input type="radio" name="radioBeca">
+                            <input type="radio" name="radioBeca"  onclick="javascript:showAF(true) ">
                             Apoyo familiar.
                         </p>
-                        <input type="text" class="form-control" id="txtAP" placeholder="Monto mensual">
+                        <input id= "AF"  style="display: none" type="text" class="form-control" id="txtAP" placeholder="Monto mensual">
                     </div>  
+
                     <div class="form-group">
-                        <p for="txtOt">
-                            <input type="radio" name="radioBeca">
-                            Otra(s)
-                        </p>
-                         <label for="txtOt"> Especifíque:</label>
-                        <input type="text" class="form-control" id="txtOt">
-                    </div>  
+                       
+                            <p for="txtOt">
 
+                                <input type="radio" name="radioBeca"  onclick="javascript:showO(true)">
+                                Otra(s)
+                            </p>
+                         <div id= "Other"  style="display: none">
+                             <label for="txtOt"> Especifíque:</label>
+                            <input type="text" class="form-control" id="txtOt">
+                        
+                        </div>  
 
+                    </div>
 
              </div>
         </div>
@@ -268,15 +275,17 @@
 
                       <div class="form-group">
                             <p>
-                                <input type="radio" name="radioC">
+                                <input type="radio" name="radioC"onclick="javascript:showJustCR(true)">
                                 Sí
                             <p>
-                             <label for="txtCS"> Justifíque:</label>
-                            <textarea rows="4" cols="50"  class="form-control" id="txtCS"  required> </textarea>
+                            <div id="justCR"  style= "display:none"> 
+                                <label for="txtCS"> Justifíque:</label>
+                                <textarea rows="4" cols="50"  class="form-control" id="txtCS"  required> </textarea>
+                            </div>  
                     </div>
                     <div class="form-group">
                         <p >
-                            <input type="radio" name="radioC">
+                            <input type="radio" name="radioC"onclick="javascript:showJustCR(false)">
                             No
                         </p>
                     </div>
@@ -289,15 +298,17 @@
 
                       <div class="form-group">
                             <p>
-                                <input type="radio" name="radioCM">
+                                <input type="radio" name="radioCM" onclick="javascript:showJustCM(true)">
                                 Sí
                             <p>
-                             <label for="txtCM"> Justifíque:</label>
-                            <textarea rows="4" cols="50"  class="form-control" id="txtCM"  required> </textarea>
+                            <div id="justCM" style= "display:none"> 
+                                 <label for="txtCM"> Justifíque:</label>
+                                <textarea rows="4" cols="50"  class="form-control" id="txtCM"  required> </textarea>
+                            </div>
                     </div>
                     <div class="form-group">
                         <p >
-                            <input type="radio" name="radioCM">
+                            <input type="radio" name="radioCM"onclick="javascript:showJustCM(false)">
                             No
                         </p>
                     </div>

@@ -63,3 +63,115 @@ function showPartner(op) {
 */
  //document.getElementById('explique').style.visibility="visible";
 }
+
+function showBMC(op){
+    if(op) {
+        $("#BMC").show();
+         showBTCC(false);
+         showBP(false);
+         showBE(false);
+         showAF(false);
+         showO(false);
+    } else {
+        $("#BMC").hide();
+    }
+
+}
+function showBTCC(op){
+    if(op) {
+        $("#BTCC").show();
+        showBMC(false);
+         showBP(false);
+         showBE(false);
+         showAF(false);
+         showO(false);
+    } else {
+        $("#BTCC").hide();
+    }
+
+}
+function showBP(op){
+    if(op) {
+        $("#BP").show();
+          showBMC(false);
+         showBTCC(false);
+         showBE(false);
+         showAF(false);
+         showO(false);
+    } else {
+        $("#BP").hide();
+    }
+
+}
+function showBE(op){
+    if(op) {
+        $("#BE").show();
+        showBMC(false);
+         showBP(false);
+         showBTCC(false);
+         showAF(false);
+         showO(false);
+    } else {
+        $("#BE").hide();
+    }
+}
+function showAF(op){
+    if(op) {
+        $("#AF").show();
+        showBMC(false);
+         showBP(false);
+         showBTCC(false);
+         showO(false);
+         showBE(false);
+    } else {
+        $("#AF").hide();
+    }
+}
+
+function showO(op){
+    if(op) {
+        $("#Other").show();
+         showBMC(false);
+         showBP(false);
+         showBTCC(false);
+         showAF(false);
+         showBE(false);
+         
+    } else {
+        $("#Other").hide();
+    }
+}
+
+
+function hideAll(){
+    showBMC(false);
+    showBP(false);
+    showBTCC(false);
+    showBE(false);
+    showAF(false);
+    showO(false);
+
+
+}
+
+function showJustCM(op){
+  if(op) {
+        $("#justCM").show();
+         
+    } else {
+        $("#justCM").hide();
+    }
+
+}
+
+function showJustCR(op){
+  if(op) {
+        $("#justCR").show();
+         
+    } else {
+        $("#justCR").hide();
+    }
+
+}
+
+
