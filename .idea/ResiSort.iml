@@ -4,6 +4,10 @@
     <content url="file://$MODULE_DIR$" />
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+<<<<<<< HEAD
+=======
+    <orderEntry type="library" name="Node.js v0.10.29 Core Modules" level="application" />
+>>>>>>> 9f0285fb1543228063d09c3f46cb9614d963ab76
   </component>
 </module>
 
