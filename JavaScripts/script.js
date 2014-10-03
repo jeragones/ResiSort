@@ -36,9 +36,10 @@ function showCurrentStepInfo(step) {
     var id = "#" + step;
     $(id).addClass("activeStepInfo");
 }
-
+/*
 function showPartner(){
     $("#opNo").click(function(){
         document.getElementById('explique').innerHTML = "<label> Explique:</label> ";
     }
 }
+*/
