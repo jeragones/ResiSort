@@ -1,0 +1,33 @@
+extends layout
+
+block form
+	.container
+		.page-header
+			h1 SOLICITUD PARA RENOVACION DE RESIDENCIA
+		.row
+			.row.step
+				#div1.col-md-2(onclick='javascript: resetActive(event, 0, \'step-1\');')
+					span.fa.fa-cloud-download
+					p Información general
+				.col-md-2.activestep(onclick='javascript: resetActive(event, 20, \'step-2\');')
+					span.fa.fa-pencil
+					p Procedencia
+				.col-md-2(onclick='javascript: resetActive(event, 40, \'step-3\');')
+					span.fa.fa-refresh
+					p Conformidad
+				.col-md-2(onclick='javascript: resetActive(event, 60, \'step-4\');')
+					span.fa.fa-dollar
+					p Info Económica
+				.col-md-2(onclick='javascript: resetActive(event, 80, \'step-5\');')
+					span.fa.fa-star
+					p Concesiones
+				#last.col-md-2(onclick='javascript: resetActive(event, 100, \'step-6\');')
+					span.fa.fa-star
+					p Concesiones
+		.container(style='margin-top: 100px; margin-bottom: 100px;')
+			.row
+				#progress1.progress
+					.progress-bar(role='progressbar', aria-valuenow='0', aria-valuemin='0', aria-valuemax='100', style='width: 0%;')
+						span.progress-type Progreso General
+						span.progress-completed 0%
+			block request_form
