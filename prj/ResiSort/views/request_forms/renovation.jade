@@ -1,171 +1,107 @@
 extends layout_request
 
 block request_form
-	form(role='form')
-		#step-1.row.setup-content.step.activeStepInfo
-			.col-xs-5.well.text-left
+	#step-3.row.setup-content.step.hiddenStepInfo
+		.col-xs-5.well.text-left
+			fieldset
+				p Desea continuar con sus mismos/as compañeros/as de cuarto:
 				.form-group
-				h3 Información General
+					p
+					input(type='radio', onclick='javascript: showPartner(false)', name='radioCC')
+					| Sí
 				.form-group
-					label.text-left(for='cmbCampus') Sede
-					select#cmbCampus.form-control
-						option San Carlos
-						option Cartago
-					label(for='txtName') Nombre
-						input#txtNombre.form-control(placeholder='Escriba su nombre', required='required')
-				.form-group
-					label(for='txtLastName1') Primer Apellido
-					input#txtLastName1.form-control(placeholder='Escriba su primer apellido', required='required')
-				.form-group
-					label(for='txtLastName2') Segundo Apellido
-					input#txtLastName2.form-control(placeholder='Escriba su segundo apellido', required='required')
-				.form-group
-					label(for='txtCarnet') No. Carné
-					input#txtCarnet.form-control(placeholder='Escriba su carné', required='required')
-				.form-group
-					label(for='cmbCareer') Carrera
-					select#cmbCareer.form-control
-						option Computación
-						option Agronomía
-						option Producción Industrial
-						option Electrónica
-						option Turísmo
-						option Administración
-				.form-group
-					label(for='txtEmail') Correo Electrónico
-					input#txtEmail.form-control(type='email', placeholder='Escriba su correo electrónico', required='required')
-				.form-group
-					label(for='txtAñoNac') Año de Nacimiento
-					input#txtAñoNac.form-control(type='date', required='required')
+					p
+					input(type='radio', onclick='javascript: showPartner(true)', name='radioCC')
+					| No
+					#explique(style='display: none;')
+					label(for='txtjust')  Explique:
+					input#txtjust.form-control(type='text')
 				.form-group
 					.col-md-13.text-right
-						input.btn.btn-primary(type='button', value='Siguiente', onclick='javascript: resetActive(event, 60, \'step-2\');')
-		#step-2.row.setup-content.step.hiddenStepInfo
-			.col-xs-5.well.text-left
-				h3 Direccion de Procedencia
-				.form-group
-					label(for='cmbProvincia') Provincia
-					select#cmbProvincia.form-control
-						option San José
-						option Alajuela
-						option Cartago
-						option Heredia
-						option Guanacaste
-						option Puntarenas
-						option Limón
-				.form-group
-					label(for='txtCanton') Cantón
-					input#txtCanton.form-control(placeholder='Cantón de procedencia', required='required')
-				.form-group
-					label(for='txtDistrito') Distrito
-					input#txtDistrito.form-control(placeholder='Distrito de procedencia', required='required')
-				.form-group
-					label(for='txtSeñas') Otras Señas
-					textarea#txtseñas.form-control(rows='4', cols='50', placeholder='Otras Señas', required='required')  
-				.form-group
-					.col-md-13.text-right
-						input.btn.btn-primary(type='button', value='Siguiente', onclick='javascript: resetActive(event, 60, \'step-3\');')
-		#step-3.row.setup-content.step.hiddenStepInfo
-			.col-xs-5.well.text-left
-				fieldset
-					p Desea continuar con sus mismos/as compañeros/as de cuarto:
-					.form-group
-						p
-						input(type='radio', onclick='javascript: showPartner(false)', name='radioCC')
-						| Sí
-					.form-group
-						p
-						input(type='radio', onclick='javascript: showPartner(true)', name='radioCC')
-						| No
-						#explique(style='display: none;')
-						label(for='txtjust')  Explique:
-						input#txtjust.form-control(type='text')
-					.form-group
-						.col-md-13.text-right
-							input.btn.btn-primary(type='button', value='Siguiente', onclick='javascript: resetActive(event, 60, \'step-4\');')
-		#step-4.row.setup-content.step.hiddenStepInfo
-			.col-xs-5.well.text-left
-				h3 Información Económica
+						input.btn.btn-primary(type='button', value='Siguiente', onclick='javascript: resetActive(event, 60, \'step-4\');')
+	#step-4.row.setup-content.step.hiddenStepInfo
+		.col-xs-5.well.text-left
+			h3 Información Económica
+			p
+			| Indique la forma en la que cubrira sus gastos de estudio. Puede seleccionar mas de una opción
+			.form-group
 				p
-				| Indique la forma en la que cubrira sus gastos de estudio. Puede seleccionar mas de una opción
+					input(type='radio', name='radioBeca')
+					| Solicitud de Beca Socioeconómica del TEC en Tramite
+			.form-group
+				p(for='txtMMC')
+					input(type='radio', name='radioBeca')
+					| Beca Total Mauricio Campos.
+					input#txtMMC.form-control(type='text', placeholder='Monto mensual')
+			.form-group
+				p(for='txtBTCC')
+					input(type='radio', name='radioBeca')
+					| Beca Total Colegio Científico.
+					input#txtBTCC.form-control(type='text', placeholder='Monto mensual')
+			.form-group
+				p(for='txtBP')
+					input(type='radio', name='radioBeca')
+					| Beca Prestamo.
+					input#txtBP.form-control(type='text', placeholder='Monto mensual')
+			.form-group
+				p
+					input(type='radio', name='radioBeca')
+					| Exoneración Porcentual.
+			.form-group
+				p
+					input(type='radio', name='radioBeca')
+					| Beca de Estímulo
+					label(for='txttipo')  Tipo:
+					input#txttipo.form-control(type='text')
+					label(for='txtUS')  Último semestre que la tuvo:
+					input#txtUS.form-control(type='text')
+			.form-group
+				p(for='txtAP')
+					input(type='radio', name='radioBeca')
+					| Apoyo familiar.
+					input#txtAP.form-control(type='text', placeholder='Monto mensual')
+			.form-group
+				p(for='txtOt')
+					input(type='radio', name='radioBeca')
+					| Otra(s)
+					label(for='txtOt')  Especifíque:
+					input#txtOt.form-control(type='text')
+	#step-5.row.setup-content.step.hiddenStepInfo
+		.col-xs-5.well.text-left
+			h3 Concesiones
+			fieldset
+				p
+					| Requiere
+					u
+					b  concesión por rendimiento insuficiente
+					| del semestre actual(10 créditos aprobados para estudiantes nuevos y 12 créditos aprobados para estudiantes regulares).
+					b SI ESTA SEGURO DE QUE LA OCUPA SELECCIONE SI Y EXPLIQUE.
 				.form-group
 					p
-						input(type='radio', name='radioBeca')
-						| Solicitud de Beca Socioeconómica del TEC en Tramite
-				.form-group
-					p(for='txtMMC')
-						input(type='radio', name='radioBeca')
-						| Beca Total Mauricio Campos.
-						input#txtMMC.form-control(type='text', placeholder='Monto mensual')
-				.form-group
-					p(for='txtBTCC')
-						input(type='radio', name='radioBeca')
-						| Beca Total Colegio Científico.
-						input#txtBTCC.form-control(type='text', placeholder='Monto mensual')
-				.form-group
-					p(for='txtBP')
-						input(type='radio', name='radioBeca')
-						| Beca Prestamo.
-						input#txtBP.form-control(type='text', placeholder='Monto mensual')
+						input(type='radio', name='radioC')
+						| Sí
+					p
+						label(for='txtCS')  Justifíque:
+						textarea#txtCS.form-control(rows='4', cols='50', required='required')  
 				.form-group
 					p
-						input(type='radio', name='radioBeca')
-						| Exoneración Porcentual.
+						input(type='radio', name='radioC')
+						| No
+						fieldset
+						p
+							| Requiere
+							u
+							b  concesión por matrícula insuficiente
+							| del semestre para el que está solicitando la renovación/reingreso(menos de 12 créditos).
+							b SI ESTA SEGURO DE QUE LA OCUPA SELECCIONE SI Y EXPLIQUE.
 				.form-group
 					p
-						input(type='radio', name='radioBeca')
-						| Beca de Estímulo
-						label(for='txttipo')  Tipo:
-						input#txttipo.form-control(type='text')
-						label(for='txtUS')  Último semestre que la tuvo:
-						input#txtUS.form-control(type='text')
-				.form-group
-					p(for='txtAP')
-						input(type='radio', name='radioBeca')
-						| Apoyo familiar.
-						input#txtAP.form-control(type='text', placeholder='Monto mensual')
-				.form-group
-					p(for='txtOt')
-						input(type='radio', name='radioBeca')
-						| Otra(s)
-						label(for='txtOt')  Especifíque:
-						input#txtOt.form-control(type='text')
-		#step-5.row.setup-content.step.hiddenStepInfo
-			.col-xs-5.well.text-left
-				h3 Concesiones
-				fieldset
+						input(type='radio', name='radioCM')
+						| Sí
 					p
-						| Requiere
-						u
-						b  concesión por rendimiento insuficiente
-						| del semestre actual(10 créditos aprobados para estudiantes nuevos y 12 créditos aprobados para estudiantes regulares).
-						b SI ESTA SEGURO DE QUE LA OCUPA SELECCIONE SI Y EXPLIQUE.
-					.form-group
-						p
-							input(type='radio', name='radioC')
-							| Sí
-						p
-							label(for='txtCS')  Justifíque:
-							textarea#txtCS.form-control(rows='4', cols='50', required='required')  
-					.form-group
-						p
-							input(type='radio', name='radioC')
-							| No
-							fieldset
-							p
-								| Requiere
-								u
-								b  concesión por matrícula insuficiente
-								| del semestre para el que está solicitando la renovación/reingreso(menos de 12 créditos).
-								b SI ESTA SEGURO DE QUE LA OCUPA SELECCIONE SI Y EXPLIQUE.
-					.form-group
-						p
-							input(type='radio', name='radioCM')
-							| Sí
-						p
-							label(for='txtCM')  Justifíque:
-							textarea#txtCM.form-control(rows='4', cols='50', required='required')  
-					.form-group
-						p
-							input(type='radio', name='radioCM')
-							| No
+						label(for='txtCM')  Justifíque:
+						textarea#txtCM.form-control(rows='4', cols='50', required='required')  
+				.form-group
+					p
+						input(type='radio', name='radioCM')
+						| No

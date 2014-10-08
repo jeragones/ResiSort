@@ -1,33 +1,68 @@
-extends layout
+extends ../index
 
-block form
-	.container
-		.page-header
-			h1 SOLICITUD PARA RENOVACION DE RESIDENCIA
-		.row
-			.row.step
-				#div1.col-md-2(onclick='javascript: resetActive(event, 0, \'step-1\');')
-					span.fa.fa-cloud-download
-					p Información general
-				.col-md-2.activestep(onclick='javascript: resetActive(event, 20, \'step-2\');')
-					span.fa.fa-pencil
-					p Procedencia
-				.col-md-2(onclick='javascript: resetActive(event, 40, \'step-3\');')
-					span.fa.fa-refresh
-					p Conformidad
-				.col-md-2(onclick='javascript: resetActive(event, 60, \'step-4\');')
-					span.fa.fa-dollar
-					p Info Económica
-				.col-md-2(onclick='javascript: resetActive(event, 80, \'step-5\');')
-					span.fa.fa-star
-					p Concesiones
-				#last.col-md-2(onclick='javascript: resetActive(event, 100, \'step-6\');')
-					span.fa.fa-star
-					p Concesiones
-		.container(style='margin-top: 100px; margin-bottom: 100px;')
-			.row
-				#progress1.progress
-					.progress-bar(role='progressbar', aria-valuenow='0', aria-valuemin='0', aria-valuemax='100', style='width: 0%;')
-						span.progress-type Progreso General
-						span.progress-completed 0%
-			block request_form
+block body
+	div(class="container")
+		div(class="page-header")
+			h2 SOLICITUD PARA RENOVACION DE RESIDENCIA
+		div(class="container" style="margin-top: 100px; margin-bottom: 100px;")
+			div(class="row")
+				div(class="progress" id="progress1")
+					div(class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;")
+					span(class="progress-type") Progreso General
+					span(class="progress-completed") 0%
+			form(role='form')
+				div(id="step-1" class="row setup-content step activeStepInfo" ng-controller="InformationCtrl as info")
+					.col-xs-5.well.text-left
+						.form-group
+						h3 Información General
+						.form-group
+							label.text-left(for='cmbCampus') Sede
+							select#cmbCampus.form-control
+								option San Carlos
+								option Cartago
+						.form-group
+							label(for='txtName') Nombre
+							input#txtNombre.form-control(placeholder='Escriba su nombre', required='required')
+						.form-group
+							label(for='txtLastName1') Primer Apellido
+							input#txtLastName1.form-control(placeholder='Escriba su primer apellido', required='required')
+						.form-group
+							label(for='txtLastName2') Segundo Apellido
+							input#txtLastName2.form-control(placeholder='Escriba su segundo apellido', required='required')
+						.form-group
+							label(for='txtCarnet') No. Carné
+							input#txtCarnet.form-control(placeholder='Escriba su carné', required='required')
+						.form-group
+							label(for='cmbCareer') Carrera
+							select(class="form-control" ng-model="info.slcCareer")
+								option(ng-repeat="career in info.opCareer") {{ career }}
+						.form-group
+							label(for='txtEmail') Correo Electrónico
+							input#txtEmail.form-control(type='email', placeholder='Escriba su correo electrónico', required='required')
+						.form-group
+							label(for='txtBirthYear') Año de Nacimiento
+							input#txtBirthYear.form-control(placeholder='Escriba su año de nacimiento', required='required')
+						.form-group
+							.col-md-13.text-right
+								input.btn.btn-primary(type='button', value='Siguiente', onclick='javascript: resetActive(event, 25, "step-2");')
+				div(id="step-2" class="row setup-content step hiddenStepInfo")
+					.col-xs-5.well.text-left
+						h3 Direccion de Procedencia
+						.form-group
+							label(for='cmbProvince') Provincia
+							select(class="form-control")
+								|option(ng-repeat="option in adrs.opProvince") {{ option }}
+						.form-group
+							label(for='txtCanton') Cantón
+							input#txtCanton.form-control(placeholder='Cantón de procedencia', required='required')
+						.form-group
+							label(for='txtDistrict') Distrito
+							input#txtDistrict.form-control(placeholder='Distrito de procedencia', required='required')
+						.form-group
+							label(for='txtAdress') Otras Señas
+							textarea#txtAdress.form-control(rows='4', cols='50', placeholder='Otras Señas', required='required')  
+						.form-group
+							.col-md-13.text-right
+								input.btn.btn-info(type='button', value='Volver', onclick='javascript: resetActive(event, 0, "step-1");')
+								input.btn.btn-primary(type='button', value='Siguiente', onclick='javascript: resetActive(event, 50, "step-3");')
+				block request_form

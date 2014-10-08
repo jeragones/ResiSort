@@ -1,17 +1,16 @@
 doctype html
-html
+html(ng-app="appResiSort")
 	head
 		title= title
 
 		meta(charset="utf-8")
 		meta(name="viewport" content="width=device-width, initial-scale=1.0")
-		link(rel="stylesheet" type="text/css" href="../Styles/font-awesome/css/font-awesome.min.css")
-		link(rel="stylesheet" type="text/css" href="../Styles/style.css")
-		link(rel="stylesheet" type="text/css" href="../Styles/bootstrap/css/bootstrap.min.css")
-		script(type="text/javascript" src="../JavaScripts/jquery-1.10.2.min.js")
-		script(type="text/javascript" src="../Styles/bootstrap/js/bootstrap.min.js")
-		script(type="text/javascript" src="../JavaScripts/script.js")
+		link(rel="stylesheet" type="text/css" href="/stylesheets/font-awesome/css/font-awesome.min.css")
+		link(rel="stylesheet" type="text/css" href="/stylesheets/bootstrap/css/bootstrap.min.css")
+		
+		script(type="text/javascript" src="/javaScripts/jquery-1.10.2.min.js")
+		script(type="text/javascript" src="/stylesheets/bootstrap/js/bootstrap.min.js")
 
-		link(rel='stylesheet', href='/stylesheets/style.css')
+		link(rel='stylesheet' type="text/css" href='/stylesheets/style.css')
 	body
 		block content
